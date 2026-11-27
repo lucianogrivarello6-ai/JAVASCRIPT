@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Simulador — DOM</title>
+  <link rel="stylesheet" href="estilo/estilo.css" />
+</head>
+<body>
+  <main class="simulador">
+    <header class="simulador__header">
+      <h1>Mi Simulador</h1>
+      <p>Gestión dinámica de productos con DOM y eventos</p>
+    </header>
+
+    <form id="form-producto" class="form-producto">
+      <div class="campo">
+        <label for="input-nombre">Nombre</label>
+        <input
+          type="text"
+          id="input-nombre"
+          placeholder="Ej. Auriculares Bluetooth"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="input-precio">Precio</label>
+        <input
+          type="number"
+          id="input-precio"
+          placeholder="Ej. 35000"
+          min="1"
+          step="any"
+          required
+        />
+      </div>
+
+      <button type="submit" id="btn-agregar" class="btn btn--primary">
+        + Agregar
+      </button>
+    </form>
+
+    <section class="busqueda">
+      <label for="input-buscar" class="sr-only">Buscar producto</label>
+      <input
+        type="search"
+        id="input-buscar"
+        placeholder="Filtrar por nombre (evento de teclado)..."
+      />
+    </section>
+
+    <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+
+    <section class="lista-section">
+      <ul id="contenedor-items" class="lista-productos"></ul>
+    </section>
+  </main>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

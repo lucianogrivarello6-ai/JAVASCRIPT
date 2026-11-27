@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Simulador — Electrodomésticos</title>
+  <link rel="stylesheet" href="./estilo/semana7.css" />
+</head>
+<body>
+  <main class="simulador">
+    <h1>Mi Simulador</h1>
+
+    <div class="formulario">
+      <label for="input-nombre">Nombre</label>
+      <input type="text" id="input-nombre" placeholder="Ej. heladera" />
+
+      <label for="input-precio">Precio</label>
+      <input type="number" id="input-precio" placeholder="Ej. 15000" />
+
+      <button type="button" id="btn-agregar" class="btn-agregar">+ Agregar</button>
+    </div>
+
+    <div class="filtro">
+      <label for="input-buscar">Buscar</label>
+      <input type="text" id="input-buscar" placeholder="Escribí para filtrar..." />
+    </div>
+
+    <p id="feedback" class="feedback"></p>
+
+    <div id="contenedor-items" class="contenedor-items"></div>
+  </main>
+
+  <script src="./js/semana7.js"></script>
+</body>
+</html>

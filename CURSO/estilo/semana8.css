@@ -1,0 +1,223 @@
+:root {
+  --bg-page: #eef2f6;
+  --bg-surface: #ffffff;
+  --bg-card: #f8fafc;
+  --bg-highlight: #fef08a;
+  --bg-feedback: #dbeafe;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-feedback: #1e3a8a;
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --border: #cbd5e1;
+  --ring: rgba(13, 148, 136, 0.22);
+  --shadow: 0 12px 28px -8px rgba(15, 23, 42, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 2.25rem 1rem;
+  line-height: 1.5;
+}
+
+.simulador {
+  max-width: 660px;
+  margin: 0 auto;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.simulador__header {
+  padding-bottom: 1rem;
+  margin-bottom: 1.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.simulador__header h1 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--accent-hover);
+  letter-spacing: -0.02em;
+}
+
+.simulador__header p {
+  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 140px auto;
+  gap: 0.75rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.campo,
+.filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.filtro {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+input {
+  width: 100%;
+  padding: 0.62rem 0.78rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+button {
+  font-family: inherit;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.btn-agregar {
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 0.66rem 1.15rem;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.btn-agregar:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-eliminar {
+  background-color: var(--danger);
+  color: #ffffff;
+  padding: 0.48rem 0.85rem;
+  font-size: 0.84rem;
+}
+
+.btn-eliminar:hover {
+  background-color: var(--danger-hover);
+}
+
+.feedback {
+  display: none;
+  margin-bottom: 1.15rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  background-color: var(--bg-feedback);
+  color: var(--text-feedback);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.feedback.activo {
+  display: block;
+}
+
+.contenedor-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.card-producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.05rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: background-color 0.45s ease, border-color 0.2s ease;
+}
+
+.card-producto:hover {
+  border-color: #94a3b8;
+}
+
+.card-producto.nuevo {
+  background-color: var(--bg-highlight);
+}
+
+.card-producto h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 0.15rem;
+}
+
+.card-producto p {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-hover);
+}
+
+.estado-vacio {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 1.5rem 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 560px) {
+  .simulador {
+    padding: 1.25rem;
+  }
+
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-agregar {
+    width: 100%;
+  }
+}

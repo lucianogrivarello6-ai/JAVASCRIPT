@@ -1,0 +1,153 @@
+:root {
+  --fondo: #eef2f7;
+  --tarjeta: #ffffff;
+  --item-bg: #f8fafc;
+  --texto: #1e293b;
+  --borde: #cbd5e1;
+  --principal: #0f766e;
+  --principal-hover: #115e59;
+  --peligro: #e11d48;
+  --peligro-hover: #be123c;
+  --resaltado: #fef08a;
+  --feedback-bg: #ccfbf1;
+  --feedback-texto: #134e4a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  padding: 2rem 1rem;
+}
+
+.simulador {
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+h1 {
+  margin-bottom: 1.25rem;
+  color: var(--principal);
+  font-size: 1.6rem;
+}
+
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+input {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+#input-nombre {
+  flex: 1 1 180px;
+}
+
+#input-precio {
+  width: 130px;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-agregar {
+  background-color: var(--principal);
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+}
+
+.btn-agregar:hover {
+  background-color: var(--principal-hover);
+}
+
+.btn-eliminar {
+  background-color: var(--peligro);
+  color: #ffffff;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.btn-eliminar:hover {
+  background-color: var(--peligro-hover);
+}
+
+.feedback {
+  min-height: 1.2rem;
+  margin-bottom: 1rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  background-color: var(--feedback-bg);
+  color: var(--feedback-texto);
+  font-size: 0.9rem;
+  display: none;
+}
+
+.feedback.activo {
+  display: block;
+}
+
+.contenedor-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.card-producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--item-bg);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  transition: background-color 0.4s ease;
+}
+
+.card-producto.nuevo {
+  background-color: var(--resaltado);
+}
+
+.card-producto h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.card-producto p {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--principal);
+}

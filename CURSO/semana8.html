@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Simulador — Sincronización DOM y Storage</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <main class="simulador">
+    <header class="simulador__header">
+      <h1>Mi Simulador</h1>
+      <p>Persistencia en localStorage y renderizado dinámico con DOM</p>
+    </header>
+
+    <section class="formulario" aria-label="Agregar producto">
+      <div class="campo">
+        <label for="input-nombre">Nombre</label>
+        <input
+          type="text"
+          id="input-nombre"
+          placeholder="Ej. heladera"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="campo">
+        <label for="input-precio">Precio</label>
+        <input
+          type="number"
+          id="input-precio"
+          placeholder="Ej. 15000"
+          min="1"
+        />
+      </div>
+
+      <button type="button" id="btn-agregar" class="btn-agregar">
+        + Agregar
+      </button>
+    </section>
+
+    <section class="filtro" aria-label="Filtrar productos">
+      <label for="input-buscar">Buscar</label>
+      <input
+        type="search"
+        id="input-buscar"
+        placeholder="Escribí para filtrar por nombre..."
+      />
+    </section>
+
+    <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+
+    <section aria-label="Listado de productos">
+      <div id="contenedor-items" class="contenedor-items"></div>
+    </section>
+  </main>
+
+  <script src="./CURSO/js/semana8.js"></script>
+</body>
+</html>
